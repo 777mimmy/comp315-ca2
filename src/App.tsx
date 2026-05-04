@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { ProductList } from './Components/ProductList'
 import itemList from './Assets/random_products_175.json'
+import logo from './Assets/Logo.png'
+import shoppingBasket from './Assets/shopping-basket.png'
 import './e-commerce-stylesheet.css'
 
 type Product = {
@@ -123,13 +125,13 @@ function App() {
     <div id="container">
       <div id="logo-bar">
         <div id="logo-area">
-          <img src="./src/Assets/Logo.png"></img>
+          <img src={logo}></img>
         </div>
         <div id="shopping-icon-area">
           <img
             id="shopping-icon"
             onClick={showBasket}
-            src="./src/Assets/shopping-basket.png"
+            src={shoppingBasket}
           ></img>
         </div>
         <div id="shopping-area">

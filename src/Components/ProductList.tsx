@@ -17,13 +17,15 @@ type ContentAreaProps = {
 	return (
 	  <div id="productList">
 		{props.itemList.map((item) => {
+		  const imagePath = new URL(`../Assets/Product_Images/${item.image_link}`, import.meta.url).href
+  
 		  return (
-			<div key={item.name} className="product">
+			<div key={item.id} className="product">
 			  <div className="product-top-bar">
 				<h2>{item.name}</h2>
 				<p> £{item.price.toFixed(2)} ({item.rating}/5)</p>
 			  </div>
-			  <img src={"./src/Assets/Product_Images/" + item.image_link}></img>
+			  <img src={imagePath}></img>
 			  <button
 				value={item.id}
 				disabled={item.quantity === 0}
